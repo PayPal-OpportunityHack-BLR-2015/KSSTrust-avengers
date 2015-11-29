@@ -1,0 +1,21 @@
+{
+	"name": "Kalladi",
+	"version": "0.0.1",
+	"description": "kalladi web app on bluemix",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"express": "4.12.x",
+		"cfenv": "1.0.x",
+		"body-parser":"1.14.1",
+		"express":"4.13.3",
+		"fs":"0.0.2",
+		"nodemailer":"0.7.1",
+		"twilio":"2.5.2"
+	},
+	"repository": {},
+	"engines": {
+		"node": "0.12.x"
+	} 
+}
