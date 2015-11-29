@@ -13,12 +13,6 @@ Website (+ Android App) for KSS Trust who are running an Old Age Home for the po
 <li>Payment in Web & mobile</li>
 <li>Campaigns</li>
 <li>Gallery</li>
-<li>PayUMoney Gateway</li>
-<li>Nodejs</li>
-<li>Cordova</li>
-<li>Underscore</li>
-<li>CCS3</li>
-<li>Wordpress</li>
 </ul>
 
 <br>
@@ -54,4 +48,8 @@ Website (+ Android App) for KSS Trust who are running an Old Age Home for the po
 
 </ul>
 
+<br>
+
+
+<h2>Pending Tasks in Roadmap</h2>
 <br>
