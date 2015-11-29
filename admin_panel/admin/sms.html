@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kallidai Social Seva Trust</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/sb-admin.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+	<script>
+		
+	</script>
+	
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Kallidai Social Seva Trust</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="donation.html"><i class="fa fa-credit-card"></i> Manage Donnations </a>
+                    </li>
+                    <li>
+                        <a href="campaign.html"><i class="fa fa-pencil-square-o"></i> Create Campaign </a>
+                    </li>
+                    <li>
+                        <a href="gallery.html"><i class="fa fa-list-alt"></i> Gallery </a>
+                    </li>
+                    <li class="active">
+                        <a href="sms.html"><i class="fa fa-paper-plane-o"></i> Emergency Messages </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+		
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+		
+        		<!-- Page Heading -->
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header">
+							Emergency Message Broadcast
+						</h1>
+						<ol class="breadcrumb">
+							<li class="active">
+								<i class="fa fa-paper-plane-o"></i> Send SMS
+							</li>
+						</ol>
+					</div>
+				</div>
+				
+                    <div class="col-lg-6">
+
+                        <form id="myForm" role="form">
+							
+							<div class="form-group">
+								<label>Subject</label>
+								<input name="subject" class="form-control" placeholder="Enter Subject">
+							</div>
+							
+							<div class="form-group">
+								<label>Recipients</label>
+								<input name="email" class="form-control" placeholder="Enter Email Ids of Recipients">
+							</div>
+
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message" class="form-control" rows="5" placeholder="Enter message to be sent"></textarea>
+                            </div>
+							
+							
+                            <button type="submit" class="btn btn-lg btn-primary" >Send SMS</button>
+							<button id="emailBtn" type="submit" class="btn btn-lg btn-primary">Send Email</button>
+							<button type="reset" class="btn btn-lg btn-primary">Clear</button>
+                            
+                            <div id="demo">
+                                
+                            </div>
+
+                        </form>
+						
+						
+
+                    </div>
+                </div>
+				
+
+			</div>
+		</div>
+
+    </div>
+    <!-- /#wrapper -->
+	<script>
+		document.getElementById("emailBtn").addEventListener("click", function(){
+			console.log("in submit form");
+			var formData = JSON.stringify($("#myForm").serializeArray());
+			console.log(JSON.stringify($("#myForm")));
+			$.ajax({
+			  type: "POST",
+			  url: "https://kalladi.au-syd.mybluemix.net/email",
+			  data: formData,
+			  success: function(){},
+			  dataType: "json",
+			  contentType : "application/json"
+			});
+    		document.getElementById("demo").innerHTML = "Success";
+		});
+	</script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../js/plugins/morris/raphael.min.js"></script>
+
+</body>
+
+</html>
